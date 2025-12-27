@@ -63,7 +63,27 @@ h3 {
   top: 0;
   border-left: 1px solid var(--light-gray);
 }
+.burger-checkbox {
+  display: none;
+}
+.burger-menu {
+  display: none;
+  cursor: pointer;
+  z-index: 1000;
+  font-size: 24px;
+  color: white;
+  position: absolute;
+  right: 35px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.close-icon {
+  display: none;
+}
 
+.burger-icon {
+  display: none;
+}
 .nav {
   width: 100%;
   height: 100%;
@@ -121,8 +141,14 @@ h3 {
   width: 75%;
   height: 100vh;
   position: relative;
+  display: flex;
 }
 
+.hero__wrapper {
+  flex: 0 0 50%;
+  position: relative;
+  z-index: 2;
+}
 .hero__logo {
   position: absolute;
   top: 10%;
@@ -145,13 +171,15 @@ h3 {
 }
 
 .hero__banner {
-  position: absolute;
-  right: 0;
-  top: 0;
+  flex: 0 0 50%;
+  position: relative;
+  height: 100vh;
 }
 
 .hero__banner img {
-  height: 100vh;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .section {
@@ -163,7 +191,7 @@ h3 {
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 70px 0;
+  margin-bottom: 70px;
   text-align: center;
 }
 
@@ -178,7 +206,7 @@ h3 {
 }
 
 .about {
-  height: 75vh;
+  padding: 60px 20px 120px;
   width: 100%;
 }
 
@@ -187,6 +215,8 @@ h3 {
   flex-direction: row;
   gap: 20px;
   justify-content: center;
+  flex-wrap: wrap;
+  row-gap: 30px;
 }
 
 .card {
@@ -214,7 +244,6 @@ h3 {
 }
 
 .card__content {
-  margin-top: 65px;
   text-align: center;
 }
 
@@ -226,6 +255,8 @@ h3 {
 .card__text {
   color: var(--text-dark);
   line-height: 1.5;
+  flex: 1;
+  min-height: 80px;
 }
 
 .card__price {
@@ -250,7 +281,7 @@ h3 {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 120vh;
+  padding: 60px 0;
   position: relative;
 }
 .menu__img-wrapper {
@@ -275,9 +306,12 @@ h3 {
 
 .cards-grid--menu {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(2, auto);
+  width: max-content;
+  max-width: 100%;
+  margin: 0 auto;
   gap: 20px;
+  row-gap: 30px;
 }
 
 .card--product {
@@ -291,6 +325,7 @@ h3 {
   width: 100%;
   display: flex;
   align-items: center;
+
   justify-content: center;
 }
 
@@ -299,7 +334,7 @@ h3 {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  margin: 40px 0 0 40px;
+  padding: 40px;
   text-align: left;
 }
 
@@ -312,9 +347,10 @@ h3 {
 
 .card__buttons {
   display: flex;
+  margin-top: auto;
   flex-direction: row;
   gap: 25px;
-  margin-top: 20px;
+  flex-wrap: wrap;
 }
 
 .btn {
@@ -381,17 +417,20 @@ h3 {
 }
 
 .slider-btn:hover {
-  transform: translateY(-50%) scale(1.1);
+  transform: translate(100%, -50%) scale(1.1);
   box-shadow: 0 4px 15px rgba(199, 161, 122, 0.3);
 }
 
 .slider-btn--combo {
-  right: 70px;
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  transform: translate(100%, -50%);
 }
 
 .giftset {
   width: 100%;
-  height: 100vh;
+  padding: 60px 0;
   position: relative;
 }
 
@@ -402,6 +441,9 @@ h3 {
   height: 100%;
   z-index: -1;
   background-color: var(--light-gray);
+
+  left: 0;
+  top: 0;
 }
 
 .giftset__content {
@@ -415,7 +457,7 @@ h3 {
   height: 60vh;
   background-color: white;
   box-shadow: 0 -2px 8px rgba(236, 236, 236, 0.8);
-  padding: 0px 40px 0 250px;
+  padding: 65px 40px 20px 250px;
   transform: translateX(100px);
   position: relative;
   display: flex;
@@ -448,9 +490,10 @@ h3 {
 }
 
 .card__details {
-  margin-top: 30px;
+  margin: 30px 0;
   display: flex;
   gap: 70px;
+  flex-wrap: wrap;
 }
 
 .detail {
@@ -520,7 +563,7 @@ h3 {
 
 .combo {
   width: 100%;
-  height: 120vh;
+  padding: 60px 0;
   position: relative;
 }
 
@@ -539,13 +582,16 @@ h3 {
   display: flex;
   flex-direction: row;
   gap: 20px;
-  align-items: center;
+  align-items: stretch;
+  flex-wrap: wrap;
   justify-content: center;
   position: relative;
+  padding-bottom: 40px;
+  margin: 0 100px;
 }
 
 .card--combo {
-  width: 25vw;
+  width: 350px;
   height: 570px;
   background: white;
   position: relative;
@@ -564,6 +610,10 @@ h3 {
   text-align: left;
   padding: 40px;
   margin-top: 0;
+  background-color: white;
+}
+.card__top {
+  flex: 1;
 }
 
 .card__prices {
