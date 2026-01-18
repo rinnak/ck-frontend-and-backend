@@ -10,12 +10,17 @@
   </head>
   <body>
     <header class="header">
-      <input type="checkbox" id="burger-toggle" class="burger-checkbox" />
-      <label for="burger-toggle" class="burger-menu">
-        <div class="burger-icon">☰</div>
-        <div class="close-icon">✕</div>
-      </label>
-      <nav class="nav">
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Открыть меню"
+        aria-expanded="false"
+      >
+        <span class="menu-toggle__line"></span>
+        <span class="menu-toggle__line"></span>
+        <span class="menu-toggle__line"></span>
+      </button>
+      <nav class="nav" id="mainNav">
         <div class="nav__cart-wrapper">
           <img
             class="nav__cart"
@@ -25,7 +30,7 @@
         </div>
         <ul class="nav__list">
           <li><h2 class="nav__title">TRANG CHỦ</h2></li>
-          <li class="nav__item"><a href="#hero">COFFEE</a></li>
+          <li class="nav__item active"><a href="#hero">COFFEE</a></li>
           <li class="nav__item"><a href="#about">PHIN MẠ MÀU</a></li>
           <li class="nav__item"><a href="#menu">COMBO PHIN PHÊ</a></li>
           <li class="nav__item"><a href="#giftset">GIFTSET</a></li>
@@ -324,10 +329,13 @@
           </button>
         </div>
       </section>
+
+      <button class="scroll-top" id="scrollTop" aria-label="Наверх">↑</button>
     </main>
 
     <footer class="footer">
       <a class="footer__copyright">&copy; Revo Coffee Việt Nam - 2018</a>
     </footer>
+    <script src="scripts/menu.js"></script>
   </body>
 </html>
